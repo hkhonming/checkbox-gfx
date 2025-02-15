@@ -1,0 +1,14 @@
+#!/bin/bash
+
+sudo apt -y update
+sudo apt install -y build-essential cmake ocl-icd-libopencl1 libva2 libva-drm2 libze-dev libze-intel-gpu-dev libpng-dev libboost-all-dev libmfx-gen1
+
+git clone https://github.com/oneapi-src/level-zero-tests
+cd level-zero-tests
+git checkout cf41a5a6d220a5ca951f7d92e2d62f51d38fbb1c
+wget https://people.canonical.com/~mckeesh/level-zero-tests-fix.diff
+git apply level-zero-tests-fix.diff
+mkdir build
+cd build
+cmake -D CMAKE_INSTALL_PREFIX=$PWD/../out ..
+cmake --build . --config Release --target install

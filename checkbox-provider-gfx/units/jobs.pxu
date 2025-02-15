@@ -1,0 +1,28 @@
+id: levelzerobins
+plugin: resource
+command:
+    echo 'binname: test_ipc'
+    echo 'command: sudo ./level-zero-tests/out/test_ipc'
+    echo
+
+unit: template
+template-resource: levelzerobins
+template-filter: levelzerobins.binname != ''
+template-engine: jinja2
+template-unit: job
+id: gfx_level_zero_{{ binname }}
+category_id: level-zero
+flags: simple
+user: root
+_summary: Run the {{ binname }} test from level zero tests
+requires:
+  executable.name == "{{binname}}"
+environ:
+  # necessary for local mode
+  XDG_SESSION_TYPE
+  XDG_RUNTIME_DIR
+  NORMAL_USER
+estimated_duration: 1m
+command:
+  echo "{{ command }}"
+  {{ command }}
