@@ -1,8 +1,317 @@
 id: levelzerobins
 plugin: resource
 command:
+    echo 'binname: test_api_tracing'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_api_tracing'
+    echo
+    echo 'binname: test_sysman_events'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_events'
+    echo
+    echo 'binname: test_ipc_p2p_memory'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_ipc_p2p_memory'
+    echo
+    echo 'binname: test_sysman_device_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_device_zesinit'
+    echo
+    echo 'binname: test_usm'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_usm'
+    echo
+    echo 'binname: test_driver_errors'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_driver_errors'
+    echo
+    echo 'binname: test_image'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_image'
+    echo
+    echo 'binname: test_sysman_performance_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_performance_zesinit'
+    echo
+    echo 'binname: test_sysman_psu'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_psu'
+    echo
+    echo 'binname: test_ipc_memory'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_ipc_memory'
+    echo
+    echo 'binname: test_init_sysman_before_core'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_init_sysman_before_core'
+    echo
+    echo 'binname: test_ipc_multisubdevice'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_ipc_multisubdevice'
+    echo
+    echo 'binname: test_fence'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_fence'
+    echo
+    echo 'binname: test_sysman_standby_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_standby_zesinit'
+    echo
+    echo 'binname: test_sysman_diagnostics_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_diagnostics_zesinit'
+    echo
+    echo 'binname: test_init_sysman_enum_freq_with_core_handle'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_init_sysman_enum_freq_with_core_handle'
+    echo
+    echo 'binname: test_stress_atomics'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_stress_atomics'
+    echo
+    echo 'binname: test_sysman_pci_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_pci_zesinit'
+    echo
+    echo 'binname: test_sysman_firmware'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_firmware'
+    echo
+    echo 'binname: test_sysman_ras_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_ras_zesinit'
+    echo
+    echo 'binname: test_sysman_power'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_power'
+    echo
+    echo 'binname: ze_peak'
+    echo 'command: sudo /usr/local/checkbox-gfx/ze_peak'
+    echo
+    echo 'binname: test_sysman_ras'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_ras'
+    echo
+    echo 'binname: test_sysman_device'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_device'
+    echo
+    echo 'binname: test_mutable_cmdlist'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_mutable_cmdlist'
+    echo
+    echo 'binname: test_sysman_power_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_power_zesinit'
+    echo
+    echo 'binname: ze_bandwidth'
+    echo 'command: sudo /usr/local/checkbox-gfx/ze_bandwidth'
+    echo
+    echo 'binname: test_sysman_overclocking_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_overclocking_zesinit'
+    echo
+    echo 'binname: test_sysman_firmware_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_firmware_zesinit'
+    echo
+    echo 'binname: test_copy'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_copy'
+    echo
+    echo 'binname: test_sysman_diagnostics'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_diagnostics'
+    echo
+    echo 'binname: test_sysman_pci'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_pci'
+    echo
+    echo 'binname: test_driver_init_flag_gpu'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_driver_init_flag_gpu'
+    echo
+    echo 'binname: test_ipc_multidevice'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_ipc_multidevice'
+    echo
+    echo 'binname: test_memory_overcommit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_memory_overcommit'
+    echo
+    echo 'binname: ze_peer'
+    echo 'command: sudo /usr/local/checkbox-gfx/ze_peer'
+    echo
+    echo 'binname: test_stress_memory_allocation'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_stress_memory_allocation'
+    echo
+    echo 'binname: test_pin'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_pin'
+    echo
+    echo 'binname: test_debug_errors'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_debug_errors'
+    echo
+    echo 'binname: test_init_sysman_no_env_with_core_handle'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_init_sysman_no_env_with_core_handle'
+    echo
+    echo 'binname: test_ipc_put_handle'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_ipc_put_handle'
+    echo
+    echo 'binname: test_sysman_engine'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_engine'
+    echo
+    echo 'binname: test_sysman_events_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_events_zesinit'
+    echo
+    echo 'binname: test_sampler'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sampler'
+    echo
+    echo 'binname: test_sysman_fabric'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_fabric'
+    echo
+    echo 'binname: test_device'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_device'
+    echo
+    echo 'binname: ze_nano'
+    echo 'command: sudo /usr/local/checkbox-gfx/ze_nano'
+    echo
+    echo 'binname: test_sysman_psu_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_psu_zesinit'
+    echo
+    echo 'binname: test_module'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_module'
+    echo
+    echo 'binname: test_driver_init_flag_vpu'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_driver_init_flag_vpu'
+    echo
+    echo 'binname: test_cmdqueue'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_cmdqueue'
+    echo
+    echo 'binname: test_driver'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_driver'
+    echo
+    echo 'binname: test_context'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_context'
+    echo
+    echo 'binname: ze_pingpong'
+    echo 'command: sudo /usr/local/checkbox-gfx/ze_pingpong'
+    echo
+    echo 'binname: test_sysman_fan'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_fan'
+    echo
+    echo 'binname: test_driver_init_flag_vpu_gpu'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_driver_init_flag_vpu_gpu'
+    echo
+    echo 'binname: test_cmdlist'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_cmdlist'
+    echo
+    echo 'binname: test_init_sysman_enum_freq_with_sysman_handle'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_init_sysman_enum_freq_with_sysman_handle'
+    echo
+    echo 'binname: test_fabric'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_fabric'
+    echo
+    echo 'binname: test_sysman_scheduler_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_scheduler_zesinit'
+    echo
+    echo 'binname: test_debug'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_debug'
+    echo
+    echo 'binname: test_metric'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_metric'
+    echo
+    echo 'binname: test_event'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_event'
+    echo
+    echo 'binname: test_stress_commands_overloading'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_stress_commands_overloading'
+    echo
+    echo 'binname: test_template'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_template'
+    echo
+    echo 'binname: test_cmdlist_errors'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_cmdlist_errors'
+    echo
+    echo 'binname: test_api_ltracing'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_api_ltracing'
+    echo
+    echo 'binname: test_p2p'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_p2p'
+    echo
+    echo 'binname: test_sysman_temperature'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_temperature'
+    echo
+    echo 'binname: test_sysman_standby'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_standby'
+    echo
     echo 'binname: test_ipc'
-    echo 'command: sudo ./level-zero-tests/out/test_ipc'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_ipc'
+    echo
+    echo 'binname: test_sysman_frequency'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_frequency'
+    echo
+    echo 'binname: test_memory'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_memory'
+    echo
+    echo 'binname: test_sysman_ecc_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_ecc_zesinit'
+    echo
+    echo 'binname: test_init_sysman'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_init_sysman'
+    echo
+    echo 'binname: test_residency'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_residency'
+    echo
+    echo 'binname: test_sysman_scheduler'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_scheduler'
+    echo
+    echo 'binname: test_sysman_overclocking'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_overclocking'
+    echo
+    echo 'binname: test_init_sysman_after_core'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_init_sysman_after_core'
+    echo
+    echo 'binname: test_cmdqueue_errors'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_cmdqueue_errors'
+    echo
+    echo 'binname: test_sysman_frequency_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_frequency_zesinit'
+    echo
+    echo 'binname: test_sysman_temperature_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_temperature_zesinit'
+    echo
+    echo 'binname: test_device_errors'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_device_errors'
+    echo
+    echo 'binname: test_sysman_fabric_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_fabric_zesinit'
+    echo
+    echo 'binname: test_sysman_led'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_led'
+    echo
+    echo 'binname: test_api_ltracing_dynamic'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_api_ltracing_dynamic'
+    echo
+    echo 'binname: test_multithread'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_multithread'
+    echo
+    echo 'binname: test_sysman_memory'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_memory'
+    echo
+    echo 'binname: ze_image_copy'
+    echo 'command: sudo /usr/local/checkbox-gfx/ze_image_copy'
+    echo
+    echo 'binname: test_sysman_fan_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_fan_zesinit'
+    echo
+    echo 'binname: test_stress_misc'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_stress_misc'
+    echo
+    echo 'binname: test_module_errors'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_module_errors'
+    echo
+    echo 'binname: test_metric_tracer_and_programmable'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_metric_tracer_and_programmable'
+    echo
+    echo 'binname: test_metric_errors'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_metric_errors'
+    echo
+    echo 'binname: test_driver_init_flag_none'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_driver_init_flag_none'
+    echo
+    echo 'binname: test_sysman_engine_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_engine_zesinit'
+    echo
+    echo 'binname: test_zesdevice_errors'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_zesdevice_errors'
+    echo
+    echo 'binname: test_sysman_memory_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_memory_zesinit'
+    echo
+    echo 'binname: test_sysman_performance'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_performance'
+    echo
+    echo 'binname: test_sysman_ecc'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_ecc'
+    echo
+    echo 'binname: test_multiprocess'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_multiprocess'
+    echo
+    echo 'binname: test_barrier'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_barrier'
+    echo
+    echo 'binname: test_handle_tracking_errors'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_handle_tracking_errors'
+    echo
+    echo 'binname: test_sysman_led_zesinit'
+    echo 'command: sudo /usr/local/checkbox-gfx/test_sysman_led_zesinit'
     echo
 
 unit: template
@@ -15,8 +324,6 @@ category_id: level-zero
 flags: simple
 user: root
 _summary: Run the {{ binname }} test from level zero tests
-requires:
-  executable.name == "{{binname}}"
 environ:
   # necessary for local mode
   XDG_SESSION_TYPE
