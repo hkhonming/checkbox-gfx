@@ -45,12 +45,21 @@ checkbox-gfx.install
 
 # Automated Run
 
-To run the full test plan:
+To run the full test plan locally:
 
 ```shell
 checkbox-gfx.test
-
 ```
+
+Due to some tests causing dropped SSH connections, running the tests remotely should be done like this:
+
+1. Install checkbox-gfx on both the remote machine and the local machine
+2. From the checkbox-gfx directory, run the following command
+
+```shell
+checkbox-gfx.checkbox-cli control <REMOTE IP> bin/test
+```
+
 # Develop the Checkbox GFX provider
 
 Since snaps are immutable, it is not possible to modify the content of the scripts or the test cases. Fortunately, Checkbox provides a functionality to side-load a provider on the DUT.
