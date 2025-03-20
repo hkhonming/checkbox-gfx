@@ -2,6 +2,8 @@
 
 INSTALL_DIR=/usr/local/checkbox-gfx
 
+# install level-zero testing
+
 sudo apt -y update
 sudo apt install -y build-essential cmake ocl-icd-libopencl1 libva2 libva-drm2 libze-dev libze-intel-gpu-dev libpng-dev libboost-all-dev libmfx-gen1 ninja-build clang
 
@@ -43,3 +45,15 @@ cmake -G Ninja -D CMAKE_CXX_COMPILER=clang++ -D CMAKE_C_COMPILER=clang -D CMAKE_
 cmake --build . --target package && echo "Level zero raytracing build complete" || exit 1
 cd ../..
 sudo mv level-zero-raytracing-support $INSTALL_DIR
+
+# install crucible
+sudo apt install -y python3-pip meson glslang-tools pkg-config cmake libvulkan-dev libgl1
+pip3 install opencv-python --break-system-packages
+
+cd /tmp/
+git clone https://gitlab.freedesktop.org/mesa/crucible
+cd crucible
+meson bin
+ninja -C bin
+cd ..
+sudo mv crucible $INSTALL_DIR
