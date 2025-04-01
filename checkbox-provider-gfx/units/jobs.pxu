@@ -397,7 +397,10 @@ id: crucibletests
 plugin: resource
 command:
     echo 'testgroup: stencil-triangles'
-    echo 'filter:func.depthstencil.stencil-triangles.clear-0x17.ref-0x17.*'
+    echo 'filter: func.depthstencil.stencil-triangles.clear-0x17.ref-0x17.*'
+    echo
+    echo 'testgroup: aspect-stencil'
+    echo 'filter: func.miptree.s8-uint.aspect-stencil.view-2d.levels02.*'
     echo
 
 unit: template
