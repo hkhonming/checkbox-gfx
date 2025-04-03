@@ -402,6 +402,12 @@ command:
     echo 'testgroup: aspect-stencil'
     echo 'filter: func.miptree.s8-uint.aspect-stencil.view-2d.levels02.*'
     echo
+    echo 'testgroup: aspect-depth'
+    echo 'filter: func.miptree.d32-sfloat.aspect-depth.*'
+    echo
+    echo 'testgroup: aspect-color'
+    echo 'filter: func.miptree.r8g8b8a8-unorm.aspect-color.*'
+    echo
 
 unit: template
 template-resource: levelzerobins
