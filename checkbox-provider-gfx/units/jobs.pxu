@@ -405,9 +405,88 @@ command:
     echo 'testgroup: aspect-depth'
     echo 'filter: func.miptree.d32-sfloat.aspect-depth.*'
     echo
-    echo 'testgroup: aspect-color'
+    echo 'testgroup: r8g8b8a8 aspect-color'
     echo 'filter: func.miptree.r8g8b8a8-unorm.aspect-color.*'
     echo
+    echo 'testgroup: bc3-aspect-color'
+    echo 'filter: func.miptree.bc3-unorm.aspect-color.*'
+    echo
+    echo 'testgroup: bench'
+    echo 'filter: bench.*'
+    echo
+    echo 'testgroup: bug'
+    echo 'filter: bug.*'
+    echo
+    echo 'testgroup: depthstencil'
+    echo 'filter: func.depthstencil.*'
+    echo
+    echo 'testgroup: desc'
+    echo 'filter: func.desc.*'
+    echo
+    echo 'testgroup: draw'
+    echo 'filter: func.draw*'
+    echo
+    echo 'testgroup: gs-basic'
+    echo 'filter: func.gs.basic'
+    echo
+    echo 'testgroup: first'
+    echo 'filter: func.first'
+    echo
+    echo 'testgroup: compute'
+    echo 'filter: func.compute.*'
+    echo
+    echo 'testgroup: shader'
+    echo 'filter: func.shader.*'
+    echo
+    echo 'testgroup: issue'
+    echo 'filter: func.issue*'
+    echo
+    echo 'testgroup: mesh'
+    echo 'filter: func.mesh.*'
+    echo
+    echo 'testgroup: example'
+    echo 'filter: example.*'
+    echo
+    echo 'testgroup: buffer'
+    echo 'filter: func.buffer.*'
+    echo
+    echo 'testgroup: cmd-buffer'
+    echo 'filter: func.cmd-buffer.*'
+    echo
+    echo 'testgroup: copy'
+    echo 'filter: func.copy.*'
+    echo
+    echo 'testgroup: event'
+    echo 'filter: func.event.*'
+    echo
+    echo 'testgroup: query'
+    echo 'filter: func.query.*'
+    echo
+    echo 'testgroup: interleaved-cmd-buffers'
+    echo 'filter: func.interleaved-cmd-buffers.*'
+    echo
+    echo 'testgroup: memory_budget'
+    echo 'filter: func.memory_budget'
+    echo
+    echo 'testgroup: renderpass'
+    echo 'filter: func.renderpass.*'
+    echo
+    echo 'testgroup: memory-fd'
+    echo 'filter: func.memory-fd.*'
+    echo
+    echo 'testgroup: stress'
+    echo 'filter: stress.*'
+    echo
+    echo 'testgroup: self'
+    echo 'filter: self.*'
+    echo
+    echo 'testgroup: calibrated-timestamps'
+    echo 'filter: func.calibrated-timestamps.*'
+    echo
+    echo 'testgroup: sync'
+    echo 'filter: func.sync.*
+    echo
+
 
 unit: template
 template-resource: levelzerobins
