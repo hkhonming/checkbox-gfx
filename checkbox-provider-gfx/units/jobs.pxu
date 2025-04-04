@@ -559,6 +559,11 @@ command:
   # with the same result. So this just runs everything together and checks to
   # see if the output mentions any failed tests. 
   if(grep "crucible: info   : fail 0" /tmp/crucible_out.txt); then
+    echo "The test indicates no test failures. Passing test!"
+    rm /tmp/crucible_out.txt
     exit 0
   fi
+  >&2 echo "Non-zero test failure value. Test failed!"
   rm /tmp/crucible_out.txt
+  exit 1
+
