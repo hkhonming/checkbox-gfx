@@ -547,7 +547,6 @@ environ:
   # necessary for local mode
   XDG_SESSION_TYPE 
   XDG_RUNTIME_DIR
-  NORMAL_USER
 estimated_duration: 1m
 command: 
   # --fork is used because the documentation indicates that it will prevent 
