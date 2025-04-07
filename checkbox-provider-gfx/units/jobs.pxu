@@ -393,6 +393,101 @@ command:
     echo 'command: embree_rthwif_test --default-rtas-builder --sw-instancing --procedurals-committed-hit'
     echo
 
+id: crucibletests
+plugin: resource
+command:
+    echo 'testgroup: stencil-triangles'
+    echo 'filter: func.depthstencil.stencil-triangles.clear-0x17.ref-0x17.*'
+    echo
+    echo 'testgroup: aspect-stencil'
+    echo 'filter: func.miptree.s8-uint.aspect-stencil.view-2d.levels02.*'
+    echo
+    echo 'testgroup: aspect-depth'
+    echo 'filter: func.miptree.d32-sfloat.aspect-depth.*'
+    echo
+    echo 'testgroup: r8g8b8a8 aspect-color'
+    echo 'filter: func.miptree.r8g8b8a8-unorm.aspect-color.*'
+    echo
+    echo 'testgroup: bc3-aspect-color'
+    echo 'filter: func.miptree.bc3-unorm.aspect-color.*'
+    echo
+    echo 'testgroup: bench'
+    echo 'filter: bench.*'
+    echo
+    echo 'testgroup: bug'
+    echo 'filter: bug.*'
+    echo
+    echo 'testgroup: depthstencil'
+    echo 'filter: func.depthstencil.*'
+    echo
+    echo 'testgroup: desc'
+    echo 'filter: func.desc.*'
+    echo
+    echo 'testgroup: draw'
+    echo 'filter: func.draw*'
+    echo
+    echo 'testgroup: gs-basic'
+    echo 'filter: func.gs.basic'
+    echo
+    echo 'testgroup: first'
+    echo 'filter: func.first'
+    echo
+    echo 'testgroup: compute'
+    echo 'filter: func.compute.*'
+    echo
+    echo 'testgroup: shader'
+    echo 'filter: func.shader.*'
+    echo
+    echo 'testgroup: issue'
+    echo 'filter: func.issue*'
+    echo
+    echo 'testgroup: mesh'
+    echo 'filter: func.mesh.*'
+    echo
+    echo 'testgroup: example'
+    echo 'filter: example.*'
+    echo
+    echo 'testgroup: buffer'
+    echo 'filter: func.buffer.*'
+    echo
+    echo 'testgroup: cmd-buffer'
+    echo 'filter: func.cmd-buffer.*'
+    echo
+    echo 'testgroup: copy'
+    echo 'filter: func.copy.*'
+    echo
+    echo 'testgroup: event'
+    echo 'filter: func.event.*'
+    echo
+    echo 'testgroup: query'
+    echo 'filter: func.query.*'
+    echo
+    echo 'testgroup: interleaved-cmd-buffers'
+    echo 'filter: func.interleaved-cmd-buffers.*'
+    echo
+    echo 'testgroup: memory_budget'
+    echo 'filter: func.memory_budget'
+    echo
+    echo 'testgroup: renderpass'
+    echo 'filter: func.renderpass.*'
+    echo
+    echo 'testgroup: memory-fd'
+    echo 'filter: func.memory-fd.*'
+    echo
+    echo 'testgroup: stress'
+    echo 'filter: stress.*'
+    echo
+    echo 'testgroup: self'
+    echo 'filter: self.*'
+    echo
+    echo 'testgroup: calibrated-timestamps'
+    echo 'filter: func.calibrated-timestamps.*'
+    echo
+    echo 'testgroup: sync'
+    echo 'filter: func.sync.*
+    echo
+
+
 unit: template
 template-resource: levelzerobins
 template-filter: levelzerobins.binname != ''
@@ -437,3 +532,39 @@ command:
   LD_LIBRARY_PATH=$SYCL_BUNDLE_ROOT/lib/oclgpu:$LD_LIBRARY_PATH
   echo "{{ command }}"
   {{ command }}
+
+unit: template
+template-resource: crucibletests
+template-filter: crucibletests.testgroup != ''
+template-engine: jinja2
+template-unit: job 
+id: gfx_mesa_crucible_{{ testgroup }}
+category_id: mesa
+flags: simple
+user: root
+_summary: Run the {{ testgroup }} test from crucible tests
+environ: 
+  # necessary for local mode
+  XDG_SESSION_TYPE 
+  XDG_RUNTIME_DIR
+estimated_duration: 1m
+command: 
+  # --fork is used because the documentation indicates that it will prevent 
+  # individual tests from crashing the main thread. Remove it if debugging
+  (cd /usr/local/checkbox-gfx/crucible; XDG_RUNTIME_DIR=/run/user/1000 ./bin/crucible run --fork '{{ filter }}' > /tmp/crucible_out.txt)
+  cat /tmp/crucible_out.txt
+  # This is a workaround for the fact that crucible ls-tests shows top-level tests such as
+  # func.depthstencil.stencil-triangles.clear-0x17.ref-0x17.compare-op-always.pass-op-zero.fail-op-invert
+  # but the test has multiple versions (.q0, .q1, .q2), which will return an error if
+  # run together, even if they do not return an error when running separately
+  # with the same result. So this just runs everything together and checks to
+  # see if the output mentions any failed tests. 
+  if(grep "crucible: info   : fail 0" /tmp/crucible_out.txt); then
+    echo "The test indicates no test failures. Passing test!"
+    rm /tmp/crucible_out.txt
+    exit 0
+  fi
+  >&2 echo "Non-zero test failure value. Test failed!"
+  rm /tmp/crucible_out.txt
+  exit 1
+

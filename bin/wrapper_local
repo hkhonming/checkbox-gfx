@@ -39,6 +39,9 @@ if [ -e $RUNTIME/wrapper_common_classic ]; then
   . $RUNTIME/wrapper_common_classic
 else
   echo "ERROR: no $RUNTIME/wrapper_common_classic found"
+  # This is to fix an issue where tests are run and built with different deps
+  # due to checkbox confinement
+  unset LD_LIBRARY_PATH
   exit 0
 fi
 
