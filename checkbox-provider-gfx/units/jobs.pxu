@@ -503,6 +503,7 @@ environ:
   XDG_SESSION_TYPE
   XDG_RUNTIME_DIR
   NORMAL_USER
+requires: cpuinfo.type == 'GenuineIntel'
 estimated_duration: 1m
 command:
   echo "{{ command }}"
@@ -518,6 +519,7 @@ category_id: level-zero-raytracing
 flags: simple
 user: root
 _summary: Run the {{ testname }} test from level zero tests
+requires: cpuinfo.type == 'GenuineIntel'
 environ:
   # necessary for local mode
   XDG_SESSION_TYPE
