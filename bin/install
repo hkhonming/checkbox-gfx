@@ -11,6 +11,8 @@ elif [[ $(lscpu | grep "Qualcomm") ]]; then
     VENDOR=Qualcomm
 fi
 
+sudo mkdir $INSTALL_DIR
+
 if [ "$VENDOR" = "Intel" ]; then
     echo "Installing Level Zero tests"
     # install level-zero testing
@@ -70,4 +72,4 @@ cd crucible
 meson bin
 ninja -C bin
 cd ..
-sudo mv crucible $INSTALL_DIR
+sudo mv crucible/ $INSTALL_DIR
