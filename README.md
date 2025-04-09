@@ -25,7 +25,7 @@ lxd init --auto
 git clone https://github.com/canonical/checkbox-gfx
 cd checkbox-gfx
 snapcraft
-sudo snap install --dangerous --classic ./checkbox-gfx_1.0_amd64.snap
+sudo snap install --dangerous --classic ./checkbox-gfx_1.0_<arch>.snap
 ```
 
 Make sure that the provider service is running and active:
