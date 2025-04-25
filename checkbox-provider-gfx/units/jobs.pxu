@@ -801,10 +801,6 @@ command:
     echo 'openglvariant: GLES3.2'
     echo 'testfilter: KHR-GLES32.core.copy_image.*'
     echo
-    echo 'testgroup: copy_image'
-    echo 'openglvariant: GLES3.2'
-    echo 'testfilter: KHR-GLES32.core.copy_image.*'
-    echo
     echo 'testgroup: texture2d'
     echo 'openglvariant: GLES3.2'
     echo 'testfilter: KHR-GLES32.core.internalformat.texture2d.*'
@@ -938,6 +934,27 @@ estimated_duration: 1m
 command:
   cd /usr/local/checkbox-gfx/VK-GL-CTS/build; ./external/vulkancts/modules/vulkan/deqp-vk --deqp-caselist-file={{ testfile }}
 
+plugin: resource
+id: gfx_mesa_gl_hw_render
+category_id: mesa
+user: root
+requires:
+  package.name == 'mesa-utils'
+_summary: Checks for HW render for OpenGL
+environ: 
+  # necessary for local mode
+  XDG_SESSION_TYPE 
+  XDG_RUNTIME_DIR
+estimated_duration: 1
+command:
+  RENDERER=$(glxinfo | grep "OpenGL renderer string" | grep "Mesa Intel")
+  if [ -z "$RENDERER" ]; then
+    echo "FAIL: Renderer appears to be software based"
+    exit 1
+  fi
+  echo "PASS: Using HW rendering"
+  exit 0
+
 unit: template
 template-resource: glconformancetests
 template-filter: glconformancetests.testgroup != ''
@@ -945,6 +962,7 @@ template-engine: jinja2
 template-unit: job 
 id: gfx_mesa_gl_{{ openglvariant }}_{{ testgroup }}
 category_id: mesa
+depends: gfx_mesa_gl_hw_render
 flags: simple
 user: root
 _summary: Run the {{ testgroup }} {{ openglvariant }} tests from VK-GL-CTS
