@@ -63,7 +63,7 @@ fi
 
 echo "Installing Crucible tests"
 # install crucible
-sudo apt install -y python3-pip meson glslang-tools pkg-config cmake libvulkan-dev libgl1
+sudo apt install -y python3-pip meson glslang-tools pkg-config cmake libvulkan-dev libgl1 mesa-common-dev libglfw3-dev libgles2-mesa-dev
 pip3 install opencv-python --break-system-packages
 
 cd /tmp/
@@ -95,7 +95,7 @@ git checkout opengl-cts-4.6.6.0
 python3 external/fetch_sources.py
 python3 -m pip install lxml
 mkdir build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS=-m64 -DCMAKE_CXX_FLAGS=-m64
+cmake .. -DDEQP_TARGET=default
 # 64GB RAM wasn't enough for -j. Add nproc
-cmake --build external/openglcts
+make -j`nproc`
 sudo mv /tmp/VK-GL-CTS $INSTALL_DIR/GL-CTS
