@@ -746,6 +746,35 @@ command:
     echo 'testfile: /usr/local/checkbox-gfx/VK-GL-CTS/external/vulkancts/mustpass/main/vk-default/ycbcr.txt'
     echo
 
+id: glconformancetests
+plugin: resource
+command:
+    echo 'testgroup: info'
+    echo 'testfilter: KHR-GLES32.info.*'
+    echo
+    echo 'testgroup: shaders'
+    echo 'testfilter: KHR-GLES32.shaders.*'
+    echo
+    echo 'testgroup: geometry_shader'
+    echo 'testfilter: KHR-GLES32.core.geometry_shader.*'
+    echo
+    echo
+    echo 'testgroup: gpu_shader5'
+    echo 'testfilter: KHR-GLES32.core.gpu_shader5.*'
+    echo
+    echo
+    echo 'testgroup: tessellation_shader'
+    echo 'testfilter: KHR-GLES32.core.tessellation_shader.*'
+    echo
+    echo
+    echo 'testgroup: texture_cube_map_array'
+    echo 'testfilter: KHR-GLES32.core.texture_cube_map_array.*'
+    echo
+    echo
+    echo 'testgroup: texture_border_clamp'
+    echo 'testfilter: KHR-GLES32.core.texture_border_clamp.*'
+    echo
+
 unit: template
 template-resource: levelzerobins
 template-filter: levelzerobins.binname != ''
@@ -845,3 +874,21 @@ environ:
 estimated_duration: 1m
 command:
   cd /usr/local/checkbox-gfx/VK-GL-CTS/build; ./external/vulkancts/modules/vulkan/deqp-vk --deqp-caselist-file={{ testfile }}
+
+unit: template
+template-resource: glconformancetests
+template-filter: glconformancetests.testgroup != ''
+template-engine: jinja2
+template-unit: job
+id: gfx_mesa_gl_{{ testgroup }}
+category_id: mesa
+flags: simple
+user: root
+_summary: Run the {{ testgroup }} GL tests from VK-GL-CTS
+environ:
+  # necessary for local mode
+  XDG_SESSION_TYPE
+  XDG_RUNTIME_DIR
+estimated_duration: 1m
+command:
+  cd /usr/local/checkbox-gfx/VK-GL-CTS/build/external/openglcts/modules; ./glcts --deqp-surface-type=fbo --deqp-case={{ testfilter }}
