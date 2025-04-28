@@ -13,6 +13,18 @@ fi
 
 sudo mkdir $INSTALL_DIR
 
+# install OpenCL-CTS
+sudo apt install ocl-icd-opencl-dev
+cd /tmp
+git clone https://github.com/KhronosGroup/OpenCL-CTS
+cd OpenCL-CTS
+git checkout v2024-05-29-01
+mkdir build
+cd ..
+cmake -S OpenCL-CTS -B OpenCL-CTS/build  -DCL_INCLUDE_DIR=/usr/include/CL -DCL_LIB_DIR=/usr/lib/x86_64-linux-gnu/  -DOPENCL_LIBRARIES=OpenCL
+cmake --build OpenCL-CTS/build --config Release
+sudo mv /tmp/OpenCL-CTS $INSTALL_DIR/OpenCL-CTS
+
 if [ "$VENDOR" = "Intel" ]; then
     echo "Installing Level Zero tests"
     # install level-zero testing
