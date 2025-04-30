@@ -51,6 +51,8 @@ apps:
     command: bin/shell-wrapper
   install:
     command: bin/install
+  install-opencl:
+    command: bin/install-opencl
   remove:
     command: bin/remove
 
