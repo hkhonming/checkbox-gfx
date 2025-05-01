@@ -840,6 +840,180 @@ command:
     echo 'binname: basic'
     echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/basic/test_basic'
     echo
+    echo 'binname: geometrics'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/geometrics/test_geometrics'
+    echo
+    echo 'binname: api'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/api/test_api'
+    echo
+    echo 'binname: compiler'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/compiler/test_compiler'
+    echo
+    echo 'binname: commonfns'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/commonfns/test_commonfns'
+    echo
+    echo 'binname: relationals'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/relationals/test_relationals'
+    echo
+    echo 'binname: thread_dimensions'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/thread_dimensions/test_thread_dimensions full*'
+    echo
+    echo 'binname: mult_device_contexts'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/multiple_device_context/test_multiples'
+    echo
+    echo 'binname: atomics'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/atomics/test_atomics'
+    echo
+    echo 'binname: profiling'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/profiling/test_profiling'
+    echo
+    echo 'binname: events'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/events/test_events'
+    echo
+    echo 'binname: allocations_single'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/allocations/test_allocations single 5 all'
+    echo
+    echo 'binname: allocations_multiple'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/allocations/test_allocations multiple 5 all'
+    echo
+    echo 'binname: vectors'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/vectors/test_vectors'
+    echo
+    echo 'binname: printf'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/printf/test_printf'
+    echo
+    echo 'binname: dev_partition'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/device_partition/test_device_partition'
+    echo
+    echo 'binname: buffers'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/buffers/test_buffers'
+    echo
+    echo 'binname: cl_get_info'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clGetInfo/test_cl_get_info'
+    echo
+    echo 'binname: kernel_image_methods'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/kernel_image_methods/test_kernel_image_methods'
+    echo
+    echo 'binname: image_streams_nearest'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/kernel_read_write/test_image_streams CL_FILTER_NEAREST'
+    echo
+    echo 'binname: image_streams_pitches_nearest'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/kernel_read_write/test_image_streams use_pitches CL_FILTER_NEAREST'
+    echo
+    echo 'binname: image_streams_max_nearest'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/kernel_read_write/test_image_streams max_images CL_FILTER_NEAREST'
+    echo
+    echo 'binname: cl_copy_images'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clCopyImage/test_cl_copy_images'
+    echo
+    echo 'binname: cl_copy_small_images'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clCopyImage/test_cl_copy_images small_images'
+    echo
+    echo 'binname: cl_copy_max_images'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clCopyImage/test_cl_copy_images max_images'
+    echo
+    echo 'binname: read_write_images'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clReadWriteImage/test_cl_read_write_images'
+    echo
+    echo 'binname: read_write_images_pitches'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clReadWriteImage/test_cl_read_write_images use_pitches'
+    echo
+    echo 'binname: read_write_max_images'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clReadWriteImage/test_cl_read_write_images max_images'
+    echo
+    echo 'binname: cl_fill_images'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clFillImage/test_cl_fill_images'
+    echo
+    echo 'binname: cl_fill_images_pitches'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clFillImage/test_cl_fill_images use_pitches'
+    echo
+    echo 'binname: cl_fill_images_max'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clFillImage/test_cl_fill_images max_images'
+    echo
+    echo 'binname: samplerless_reads'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/samplerlessReads/test_samplerless_reads'
+    echo
+    echo 'binname: samplerless_reads_pitches'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/samplerlessReads/test_samplerless_reads use_pitches'
+    echo
+    echo 'binname: samplerless_reads_max'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/samplerlessReads/test_samplerless_reads max_images'
+    echo
+    echo 'binname: mem_host_flags'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/mem_host_flags/test_mem_host_flags'
+    echo
+    echo 'binname: image_streams_linear'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/kernel_read_write/test_image_streams CL_FILTER_LINEAR'
+    echo
+    echo 'binname: image_streams_linear_pitches'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/kernel_read_write/test_image_streams use_pitches CL_FILTER_LINEAR'
+    echo
+    echo 'binname: image_streams_linear_max'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/kernel_read_write/test_image_streams max_images CL_FILTER_LINEAR'
+    echo
+    echo 'binname: gl'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/gl/test_gl'
+    echo
+    echo 'binname: select'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/select/test_select'
+    echo
+    echo 'binname: conversions'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/conversions/test_conversions'
+    echo
+    echo 'binname: contractions'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/contractions/test_contractions'
+    echo
+    echo 'binname: bruteforce'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/math_brute_force/test_bruteforce'
+    echo
+    echo 'binname: integer_ops'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/integer_ops/test_integer_ops'
+    echo
+    echo 'binname: half'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/half/test_half'
+    echo
+    echo 'binname: c11_atomics'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/c11_atomics/test_c11_atomics'
+    echo
+    echo 'binname: device_execution'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/device_execution/test_device_execution'
+    echo
+    echo 'binname: addr_space'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/generic_address_space/test_generic_address_space'
+    echo
+    echo 'binname: non_uniform_work_group'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/non_uniform_work_group/test_non_uniform_work_group'
+    echo
+    echo 'binname: pipes'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/pipes/test_pipes'
+    echo
+    echo 'binname: svm'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/SVM/test_svm'
+    echo
+    echo 'binname: workgroups'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/workgroups/test_workgroups'
+    echo
+    echo 'binname: device_timer'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/device_timer/test_device_timer'
+    echo
+    echo 'binname: spirv_new'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/spirv_new/test_spirv_new --spirv-binaries-path spirv_bin'
+    echo
+    echo 'binname: spir'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/spir/test_spir'
+    echo
+    echo 'binname: image_streams_mipmaps'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/kernel_read_write/test_image_streams test_mipmaps CL_FILTER_NEAREST'
+    echo
+    echo 'binname: cl_copy_images_mipmaps'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clCopyImage/test_cl_copy_images test_mipmaps'
+    echo
+    echo 'binname: cl_read_write_images_mipmaps'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/images/clReadWriteImage/test_cl_read_write_images test_mipmaps'
+    echo
+    echo 'binname: subgroups'
+    echo 'command: /usr/local/checkbox-gfx/OpenCL-CTS/build/test_conformance/subgroups/test_subgroups'
+    echo
 
 unit: template
 template-resource: levelzerobins
