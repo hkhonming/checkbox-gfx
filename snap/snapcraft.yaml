@@ -38,6 +38,9 @@ apps:
   test-mesa:
     command-chain: [bin/wrapper_local]
     command: bin/test-mesa
+  test-opencl:
+    command-chain: [bin/wrapper_local]
+    command: bin/test-opencl
   remote-slave:
     command-chain: [bin/wrapper_local]
     command: bin/checkbox-cli-wrapper slave
@@ -48,6 +51,8 @@ apps:
     command: bin/shell-wrapper
   install:
     command: bin/install
+  install-opencl:
+    command: bin/install-opencl
   remove:
     command: bin/remove
 
