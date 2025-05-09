@@ -36,8 +36,7 @@ systemctl status snap.checkbox-gfx.remote-slave.service
 
 # Install dependencies
 
-Some test need dependencies, so in order to run all tests, you might way to install those dependencies.
-A helper script is available to install each category of tests:
+Most tests need dependencies, and a helper script is available to install each category of tests:
 
 ```shell
 checkbox-gfx.install-lvl-zero
@@ -63,7 +62,7 @@ Due to some tests causing dropped SSH connections, running the tests remotely sh
 2. From the checkbox-gfx directory, run the following command
 
 ```shell
-checkbox-gfx.checkbox-cli control <REMOTE IP> bin/test
+checkbox-gfx.checkbox-cli control <REMOTE IP> bin/<test bin>
 ```
 
 # Develop the Checkbox GFX provider
