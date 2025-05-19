@@ -19,7 +19,7 @@ sudo mkdir -p $WORKING_DIR
 sudo chown -R $USER $WORKING_DIR
 
 sudo apt update -y
-sudo apt install -y build-essential cmake ocl-icd-libopencl1 libpng-dev libboost-all-dev libmfx-gen1 ninja-build clang ocl-icd-opencl-dev clinfo python3-pip meson glslang-tools pkg-config cmake
+sudo apt install -y build-essential cmake ocl-icd-libopencl1 libpng-dev libboost-all-dev ninja-build clang ocl-icd-opencl-dev clinfo python3-pip meson glslang-tools pkg-config cmake
 
 # install OpenCL-CTS
 cd $WORKING_DIR
