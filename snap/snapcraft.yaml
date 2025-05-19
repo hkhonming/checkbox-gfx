@@ -49,8 +49,6 @@ apps:
   shell:
     command-chain: [bin/wrapper_local]
     command: bin/shell-wrapper
-  install:
-    command: bin/install
   install-opencl:
     command: bin/install-opencl
   install-lvl-zero:
