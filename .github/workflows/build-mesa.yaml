@@ -1,0 +1,31 @@
+name: "Build OpenGL/Vulkan CTS"
+
+on:
+  workflow_dispatch:
+    inputs:
+      arch:
+        description: 'Architecture to build on'
+        required: false
+        default: 'AMD64'
+        type: choice
+        options:
+          - ARM64
+          - AMD64
+
+jobs:
+  run-install-mesa:
+    name: "Run install-mesa to generate CTS binaries"
+    runs-on: ubuntu-24.04
+
+    steps:
+    - name: Run install-mesa
+      shell: bash
+      run: |
+        bin/install-mesa
+ 
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: output
+        path: |
+          /usr/local/checkbox-gfx/*
