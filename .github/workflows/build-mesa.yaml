@@ -11,6 +11,7 @@ on:
         options:
           - ARM64
           - AMD64
+  pull_request:
 
 jobs:
   run-install-mesa:
