@@ -18,14 +18,14 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-    - name: Run install-mesa
-      shell: bash
-      run: |
-        bin/install-mesa
- 
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: output
-        path: |
-          /usr/local/checkbox-gfx/*
+      - name: Run install-mesa
+        shell: bash
+        run: |
+          bin/install-mesa
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: output
+          path: |
+            /usr/local/checkbox-gfx/*
