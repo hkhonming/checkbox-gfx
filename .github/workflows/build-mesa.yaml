@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
+      - name: checkout the main repo
+        uses: actions/checkout@v4
+
       - name: Run install-mesa
         shell: bash
         run: |
