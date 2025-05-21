@@ -16,7 +16,7 @@ on:
 jobs:
   run-install-mesa:
     name: "Run install-mesa to generate CTS binaries"
-    runs-on: ${{ inputs.arch }}
+    runs-on: [ "${{ inputs.arch }}" ]
 
     steps:
       - name: checkout the main repo
