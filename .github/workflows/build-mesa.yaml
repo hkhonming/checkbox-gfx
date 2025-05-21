@@ -4,19 +4,19 @@ on:
   workflow_dispatch:
     inputs:
       arch:
-        description: 'Architecture to build on'
+        description: 'Runner to run the workflow'
         required: false
-        default: 'AMD64'
+        default: 'ubuntu-24.04'
         type: choice
         options:
-          - ARM64
-          - AMD64
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
   pull_request:
 
 jobs:
   run-install-mesa:
     name: "Run install-mesa to generate CTS binaries"
-    runs-on: ubuntu-24.04
+    runs-on: ${{ inputs.arch }}
 
     steps:
       - name: checkout the main repo
