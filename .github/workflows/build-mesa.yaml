@@ -11,16 +11,6 @@ on:
         options:
           - ubuntu-24.04
           - ubuntu-24.04-arm
-  pull_request:
-    inputs:
-      arch:
-        description: 'Runner to run the workflow'
-        required: true
-        default: 'ubuntu-24.04'
-        type: choice
-        options:
-          - ubuntu-24.04
-          - ubuntu-24.04-arm
 
 jobs:
   run-install-mesa:
